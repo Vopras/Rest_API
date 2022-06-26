@@ -1,0 +1,51 @@
+Tema 3 PC
+
+In cadrul acestei teme am trimis serverului comenzi. Aceasta a fost esenta
+temei. Folosind functiile din laboratorul 10 am realizat comenzile care
+se cerea, acestea fiind:
+    1) Register
+    unde creeam un nou utilizator avand 2 campuri, username si password,
+    am construit un obiect .json cu ajutorul bibliotecii parson,
+    cu aceste 2 campuri. Dupa ce am construit fisierul .json am format
+    un post request si l-am trimis pe server. Dupa accea am primit
+    un raspuns pe care l-am parsat pana am inteles daca a fost, sau nu
+    efectuat cu succes.
+    2) Login
+    unde am intrat cu credentialele unui user deja creat, primind de la
+    input 2 stringuri, username si password am format fisierul .json 
+    dupa care am format un post request avand in body aceste credentiale,
+    dupa care obtinand un raspuns de la server. Pe baza raspunsului am 
+    observat daca au fost sau nu erori, si in cazul in care totul a fost
+    cu succes, am salvat cookie ce l-am obtinut la login.
+    3) Enter_library
+    unde, utilizand cookie de la login, intram in biblioteca virtuala, 
+    formand un get request si in cazut in care nu a fost nici o eroare
+    am si salvat tokenul ce ne demonstreaza faptul ca sunt in biblioteca.
+    4) Get_books
+    unde am format un get request si am obtinut lista tuturor cartilor 
+    aflate in biblioteca virtuala si le am afisat.
+    5) Get_book
+    unde, citind un id de la tastatura, il concatenez cu url-ul general
+    si obtin informatie mai amanuntita destpre cartea data.
+    6) Add_book
+    unde, citind de la tastatura mai multe campuri, creez un nou string in 
+    formatul .json si il trimit ca body intr-un request de tip post la url-ul
+    necesar.
+    7) Logout
+    unde doar am trimis un get request la adresa necesara si am vazut daca a
+    fost, sau nu efectuat cu succes pe baza raspunsului.
+    8) Exit
+    unde doar dau break.
+
+Pentru a creea request-urile am folosit functiile din request.c
+    compute_get_request
+        unde am format requesturile de tip get,
+        scriind pe prima linie GET url HTTP/1.1, pe a doua HOST si adresa sa,
+        dupa aia cookie sau headere optionale si ultima linie.
+
+    compute_post_request
+        unde am format requesturile de tip post
+        scriind pe prima linie POST url HTTP/1.1, pe a doua HOST si adresa sa,
+        dupa cookie sau headere optionale daca ele sunt, body si 
+        ultima linie.
+
